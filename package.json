@@ -1,7 +1,7 @@
 {
   "name": "full-stack-monorepo",
   "version": "1.0.0",
-  "description": "A full-stack monorepo with Node.js backend and React frontend",
+  "description": "A full-stack monorepo with Node.js backend and React frontend for exchange rate tracking",
   "private": true,
   "type": "module",
   "workspaces": [
