@@ -1,0 +1,22 @@
+{
+  "name": "exchange-rates-db",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prisma:generate": "prisma generate",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prisma": "^6.1.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
