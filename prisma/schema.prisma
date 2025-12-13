@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ExchangeRate {
+  id              Int      @id @default(autoincrement())
+  timestamp       DateTime
+  baseCurrency    String
+  counterCurrency String
+  rate            Float
+  source          String
+  metadata        Json?
+  createdAt       DateTime @default(now())
+
+  @@unique([timestamp, baseCurrency, counterCurrency, source])
+  @@index([baseCurrency, counterCurrency, timestamp])
+  @@map("exchange_rates")
+}
