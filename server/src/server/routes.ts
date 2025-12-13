@@ -3,6 +3,14 @@ import { ratesService } from '../services/ratesService';
 
 const router = Router();
 
+router.get('/', (req: Request, res: Response) => {
+  res.json({ message: 'Welcome to the Exchange Rate API', version: '1.0.0' });
+});
+
+router.get('/health', (req: Request, res: Response) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 router.get('/api/rates/current', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const refresh = req.query.refresh === 'true';
